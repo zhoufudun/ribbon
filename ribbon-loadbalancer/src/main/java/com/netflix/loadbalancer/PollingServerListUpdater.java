@@ -32,7 +32,9 @@ public class PollingServerListUpdater implements ServerListUpdater {
         private final static DynamicIntProperty poolSizeProp = new DynamicIntProperty(CORE_THREAD, 2);
         private static Thread _shutdownThread;
 
-        // 执行定时从远程获取服务列表的线程池
+        /**
+         * schedule get serverList ScheduledThreadPoolExecutor
+         */
         static ScheduledThreadPoolExecutor _serverListRefreshExecutor = null;
 
         static {

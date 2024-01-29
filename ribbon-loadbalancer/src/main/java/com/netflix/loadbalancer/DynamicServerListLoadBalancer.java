@@ -229,9 +229,10 @@ public class DynamicServerListLoadBalancer<T extends Server> extends BaseLoadBal
      * feature enabled
      */
     public void enableAndInitLearnNewServersFeature() {
-        // 输出日志：Using serverListUpdater PollingServerListUpdater
+        // Using serverListUpdater PollingServerListUpdater
         LOGGER.info("Using serverListUpdater {}", serverListUpdater.getClass().getSimpleName());
-        serverListUpdater.start(updateAction); // 开启定时任务，从注册中心拉取服务列表
+        // pull server List from remote, such as nacos
+        serverListUpdater.start(updateAction);
     }
 
     private String getIdentifier() {
