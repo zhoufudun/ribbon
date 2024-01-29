@@ -91,7 +91,7 @@ public class BaseLoadBalancer extends AbstractLoadBalancer implements
 
     protected AtomicBoolean pingInProgress = new AtomicBoolean(false);
 
-    protected LoadBalancerStats lbStats;
+    protected LoadBalancerStats lbStats; // Zone stats: {},Server stats: []
 
     private volatile Counter counter = Monitors.newCounter("LoadBalancer_ChooseServer");
 

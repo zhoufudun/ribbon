@@ -67,9 +67,10 @@ public class ZoneAvoidancePredicate extends  AbstractServerPredicate {
     
     private void initDynamicProperties(IClientConfig clientConfig) {
         if (clientConfig != null) {
+            // DynamicProperty: {name=ZoneAwareNIWSDiscoveryLoadBalancer.nacos-user-service.triggeringLoadPerServerThreshold, current value=0.2}
             triggeringLoad = DynamicPropertyFactory.getInstance().getDoubleProperty(
                     "ZoneAwareNIWSDiscoveryLoadBalancer." + clientConfig.getClientName() + ".triggeringLoadPerServerThreshold", 0.2d);
-
+            // DynamicProperty: {name=ZoneAwareNIWSDiscoveryLoadBalancer.avoidZoneWithBlackoutPercetage, current value=0.99999}
             triggeringBlackoutPercentage = DynamicPropertyFactory.getInstance().getDoubleProperty(
                     "ZoneAwareNIWSDiscoveryLoadBalancer." + clientConfig.getClientName() + ".avoidZoneWithBlackoutPercetage", 0.99999d);
         }

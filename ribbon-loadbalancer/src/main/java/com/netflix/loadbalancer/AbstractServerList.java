@@ -28,6 +28,7 @@ import com.netflix.client.config.IClientConfig;
  * The class includes an API to create a filter to be use by load balancer
  * to filter the servers returned from {@link #getUpdatedListOfServers()} or {@link #getInitialListOfServers()}.
  *
+ *
  */
 public abstract class AbstractServerList<T extends Server> implements ServerList<T>, IClientConfigAware {   
      

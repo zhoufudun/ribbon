@@ -23,6 +23,8 @@ import java.util.List;
  * Interface that defines the methods sed to obtain the List of Servers
  * @author stonse
  *
+ * 如果使用nacos作为注册中心，这里就需要实现这个接口，并且向spring容器注入Bean
+ *
  * @param <T>
  */
 public interface ServerList<T extends Server> {
