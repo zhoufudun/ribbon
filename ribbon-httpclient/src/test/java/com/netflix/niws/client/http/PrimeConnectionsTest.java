@@ -1,17 +1,7 @@
 package com.netflix.niws.client.http;
 
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
-import org.apache.commons.configuration.Configuration;
-import org.junit.*;
-
 import com.netflix.client.ClientFactory;
 import com.netflix.client.PrimeConnections.PrimeConnectionEndStats;
-//import com.netflix.client.PrimeConnections.PrimeConnectionEndStats;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.config.ConfigurationManager;
 import com.netflix.loadbalancer.AbstractServerList;
@@ -20,6 +10,17 @@ import com.netflix.loadbalancer.Server;
 import com.sun.jersey.api.container.httpserver.HttpServerFactory;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 import com.sun.net.httpserver.HttpServer;
+import org.apache.commons.configuration.Configuration;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class PrimeConnectionsTest {
     private static String SERVICE_URI;
